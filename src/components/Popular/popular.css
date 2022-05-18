@@ -1,0 +1,38 @@
+.oneFilm-img{
+    max-width: 100%;
+}
+
+.film-box{
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+.title-box{
+    text-align: center;
+}
+
+.popular-box{
+    display: flex;
+}
+
+.popular-nav{
+    margin-left: 30px;
+    border: solid 1px #000;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.popular-btn{
+    padding: 10px;
+    background-color: #ffffff;
+    border: solid 1px #ffffff;
+    border-radius: 10px;
+    transition: 0.6s;
+}
+
+.popular-btn:hover{
+    border: solid 1px #032541;
+    background-color: #032541;
+    color: #07b3e0;
+}

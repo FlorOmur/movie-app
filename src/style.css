@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('./assets/fonts/icomoon.eot?a6adzd');
+  src:  url('./assets/fonts/icomoon.eot?a6adzd#iefix') format('embedded-opentype'),
+    url('./assets/fonts/icomoon.ttf?a6adzd') format('truetype'),
+    url('./assets/fonts/icomoon.woff?a6adzd') format('woff'),
+    url('./assets/fonts/icomoon.svg?a6adzd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c:before {
+  content: "\e900";
+}
+.icon-blue_square_1_white-ff84c271cc8c93e00aa0264a425434c329089bdfc6a392987332b5f32903f75c:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b:before {
+  content: "\e902";
+}
+.icon-glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1:before {
+  content: "\e903";
+  color: #01b4e4;
+}
+.icon-glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac:before {
+  content: "\e904";
+  color: #b5b5b5;
+}
+.icon-glyphicons-basic-175-play-806cb05551791b8dedd7f8d38fd3bd806e2d397fcfeaa00a5cc9129f0819fd07:before {
+  content: "\e905";
+}
+.icon-glyphicons-basic-371-plus-white-0bac34f16124808a12ea863b4d9cc6e599dee7c0a80658cfe9ead26939e64517:before {
+  content: "\e906";
+  color: #fff;
+}
+.icon-glyphicons-basic-441-bell-9cd2af257b98c4af3460078777d8e38a5e12bca89704eeac2f39273afcbd06ff:before {
+  content: "\e907";
+}
+.icon-glyphicons-basic-947-circle-more-white-4c440dfc1b0e626c70f4853dbbce9c4d1f2c5d8f3e05a7d3df47881cbd816adf:before {
+  content: "\e908";
+  color: #fff;
+}
