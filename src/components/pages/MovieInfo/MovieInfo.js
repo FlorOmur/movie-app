@@ -59,6 +59,7 @@ const MovieInfo = () => {
             </div>
             <div className="col-9">
               {film.title}
+              {credits.id}
             </div>
           </div>
         </div>
