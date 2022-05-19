@@ -23,7 +23,7 @@ const MovieInfo = () => {
         setCredits(res.data)
         setCreditLoader(false)
       })
-  }, [])
+  })
 
   if (filmLoader || creditLoader) {
     return 'Loading.....'
@@ -48,7 +48,7 @@ const MovieInfo = () => {
                 <img src={`https://www.themoviedb.org/t/p/w440_and_h660_face${film.poster_path}`} alt="img"/>
                 <div className="movie-info-img-btn">
                   <button>
-                    <img src={`https://www.themoviedb.org/t/p/original/7rwgEs15tFwyR9NPQ5vpzxTj19Q.jpg`}/>
+                    <img src={`https://www.themoviedb.org/t/p/original/7rwgEs15tFwyR9NPQ5vpzxTj19Q.jpg`} alt="img"/>
                     <div className="title-btn">
                       <h3>Now Streaming</h3>
                     <h2>Watch Now</h2>
