@@ -1,0 +1,43 @@
+.movieInfo {
+    padding: 30px 0;
+}
+
+.movie-info-nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.movie-info-nav li {
+    margin-left: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.movie-info-img {
+    width: 300px;
+}
+
+.movie-info-img img {
+    border-radius: 10px;
+}
+
+.movie-info-img-btn button {
+    background-color: #032541;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.title-btn {
+    margin-left: 10px;
+    color: #ffffff;
+}
+
+.movie-info-img-btn img {
+    width: 36px;
+    height: 36px;
+}

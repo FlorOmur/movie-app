@@ -1,29 +1,36 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import "./popular.css"
+import {Link} from "react-router-dom";
 
 const Popular = () => {
 
-  const [hero, setHero] = useState({})
+  const [popular, setPopular] = useState({})
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     axios(`https://api.themoviedb.org/3/movie/popular?api_key=08461d9c0888c7c07b11dcd7fda95b8d`)
       .then((res) => {
-        setHero(res.data)
+        setPopular(res.data.results)
         setLoading(false)
       })
   }, [])
-  console.log(hero)
 
-  if (loading){
+  const formatDate = (date) => {
+    const month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']
+    const reversedDate = date.split('-').reverse()
+    reversedDate[1] = month[reversedDate[1] - 1]
+    return reversedDate.join(' ')
+  }
+
+  if (loading) {
     return "loading"
   }
 
   return (
     <div className="popular">
       <div className="popular-box">
-        <h3>Что популярно</h3>
+        <h3>What's Popular</h3>
         <div className="popular-nav">
           <button className="popular-btn">Streaming</button>
           <button className="popular-btn">On TV</button>
@@ -31,16 +38,28 @@ const Popular = () => {
           <button className="popular-btn">In Theatres</button>
         </div>
       </div>
+      <div className="popular-scroller">
 
-      <div className="row">
         {
-          hero.results.map((oneFilm, idx) => (
+          popular.map((oneFilm, idx) => (
             <div className="film-box" key={idx}>
-              <img className="oneFilm-img" src={`https://image.tmdb.org/t/p/w500/${oneFilm.poster_path}`} alt="img"/>
-              <h4 className="title-box">{oneFilm.title}</h4>
+              <div className="film-img">
+                <Link to={`/movieInfo/${oneFilm.id}`}>
+                  <img className="oneFilm-img"
+                       src={`https://www.themoviedb.org/t/p/w440_and_h660_face${oneFilm.poster_path}`} alt="img"/>
+                </Link>
+                <div className="consensus">
+                  <span>50%</span>
+                </div>
+              </div>
+              <Link to={`/movieInfo/${oneFilm.id}`}>
+                <h4 className="title-box">{oneFilm.title}</h4>
+              </Link>
+              <span className="film-year">{formatDate(oneFilm.release_date)}</span>
             </div>
           ))
         }
+
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
 body {
@@ -22,7 +25,7 @@ code {
 .container {
     padding: 0 15px;
     margin: auto;
-    max-width: 1170px;
+    max-width: 1320px;
     position: relative;
 }
 
@@ -32,4 +35,17 @@ code {
     flex-wrap: wrap;
 }
 
+.col-3{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.col-9{
+    width: 75%;
+    padding: 0 15px;
+}
+
+img{
+    max-width: 100%;
+}
 
