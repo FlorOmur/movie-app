@@ -23,7 +23,7 @@ const MovieInfo = () => {
         setCredits(res.data)
         setCreditLoader(false)
       })
-  }, [])
+  }, [id])
 
   if (filmLoader || creditLoader) {
     return 'Loading.....'
