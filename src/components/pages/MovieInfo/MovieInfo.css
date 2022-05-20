@@ -61,3 +61,25 @@
 .film-info-box{
     color: #ffffff;
 }
+
+.film-score{
+    display: flex;
+    align-items: center;
+}
+
+
+.film-score-rating{
+    height: 70px;
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 50%;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 15px 15px;
+}
+
+.film-add{
+    display: flex;
+}

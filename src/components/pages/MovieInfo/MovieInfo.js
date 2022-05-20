@@ -76,7 +76,11 @@ const MovieInfo = () => {
                       <div className="film-score-rating"><span>75%</span></div>
                       <h5>User<br/>Score</h5>
                       <div className="film-add">
-
+                        <div><span className="icon-glyphicons-basic-159-thumbnails-list-white-c260ea972eebf812289fd3c41d0d2c1dff33ecbcd62be13fba8eeaf9de173789"></span></div>
+                        <div><span className="icon-glyphicons-basic-13-heart-white-28d2cc2d6418c5047efcfd2438bfc5d109192671263c270993c05f130cc4584e"></span></div>
+                        <div><span className="icon-glyphicons-basic-73-bookmark-white-432e98d550b7e4c80b06272c49475b0db85a60f6fae450420713004b3c9d3ffd"></span></div>
+                        <div><span className="icon-glyphicons-basic-49-star-white-5c85220678b312aea9599d5f12ad858a9e7df226de51ef8b6b699023ffeda5fa"></span></div>
+                        <div><span className="icon-glyphicons-basic-175-play-806cb05551791b8dedd7f8d38fd3bd806e2d397fcfeaa00a5cc9129f0819fd07"></span></div>
                       </div>
                     </div>
                   </div>

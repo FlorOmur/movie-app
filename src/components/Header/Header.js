@@ -13,8 +13,7 @@ const Header = () => {
       <div className="container">
         <div className="header-navigate">
           <div className="header-info">
-            <Link to="/"><span
-              className="icon-blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c logo-header"></span></Link>
+            <Link to="/"><span className="icon-blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c logo-header"></span></Link>
             <Link to="/films">{<Films/>}</Link>
             <Link to="/serials">{<Serials/>}</Link>
             <Link to="/people">{<People/>}</Link>
