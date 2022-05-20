@@ -75,6 +75,9 @@ const MovieInfo = () => {
                     <div className="film-score">
                       <div className="film-score-rating"><span>75%</span></div>
                       <h5>User<br/>Score</h5>
+                      <div className="film-add">
+
+                      </div>
                     </div>
                   </div>
                 </div>
