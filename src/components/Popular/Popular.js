@@ -23,6 +23,8 @@ const Popular = () => {
     return reversedDate.join(' ')
   }
 
+
+
   if (loading) {
     return "loading"
   }

@@ -2,6 +2,7 @@
     padding: 62px 40px;
     background-image: url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/bcT8CaBIj086WVD7K529h78eujb.jpg");
     background-size: cover;
+    background-position: -200px top;
     margin-bottom: 34px;
 }
 
@@ -26,6 +27,8 @@
     border: none;
     border-radius: 30px;
     padding: 10px 20px;
+    border: 0 !important;
+    outline: none !important;
 }
 
 .hero-search{

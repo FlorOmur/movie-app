@@ -41,3 +41,15 @@
     width: 36px;
     height: 36px;
 }
+
+.title-film{
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+}
+
+.film-title-year{
+    font-weight: 400;
+    color: #d1ced0;
+    font-size: 36px;
+}
