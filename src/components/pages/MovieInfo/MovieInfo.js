@@ -32,11 +32,6 @@ const MovieInfo = () => {
   const dateRelease = (date) => date.split('-').reverse().join('/')
   const genres = (movieGenres) => movieGenres.map((item) => (item.name)).join(', ')
 
-  const time = (number) => {
-    return number.toString().split('').length-1 < 9
-   
-  }
-   console.log(time(film.runtime))
 
   return (
     <div>
@@ -72,12 +67,15 @@ const MovieInfo = () => {
                 <div>
                   <div className="movie-info-title"><span className="title-film">{film.title} <span
                     className="film-title-year">(2022)</span></span>
-                    {/*<span>{time(film.runtime)}</span>*/}
                   </div>
-                  <div>
+                  <div className="film-info-box">
                     <span>{dateRelease(film.release_date)}</span>
-                    <span>{genres(film.genres)}</span>
-                    <span>{film.runtime}</span>
+                    <span className="film-class">{genres(film.genres)}</span>
+                    <span>{film.runtime} min</span>
+                    <div className="film-score">
+                      <div className="film-score-rating"><span>75%</span></div>
+                      <h5>User<br/>Score</h5>
+                    </div>
                   </div>
                 </div>
                 <div className="movie-info-description">{film.overview}</div>
