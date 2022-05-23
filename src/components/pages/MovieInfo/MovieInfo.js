@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import axios from 'axios';
 import "./MovieInfo.css"
 
@@ -30,7 +30,7 @@ const MovieInfo = () => {
   }
 
   const dateRelease = (date) => date.split('-').reverse().join('/')
-  const genres = (movieGenres) => movieGenres.map((item) => (item.name)).join(', ')
+  const genres = (movieGenres) => movieGenres.map((item, idx) => (item.name)).join(', ')
 
 
   return (
@@ -43,9 +43,9 @@ const MovieInfo = () => {
       </nav>
       <div className="out-movie-info">
         <div className="movieInfo" style={{
-          backgroundImage: `url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/${film.backdrop_path}")`,
+          backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${film.backdrop_path})`,
           backgroundSize: "cover",
-          backgroundPosition: "-200px top"
+          backgroundPosition: "200px top"
         }}>
           <div className="container">
             <div className="row">
@@ -53,13 +53,13 @@ const MovieInfo = () => {
                 <div className="movie-info-img">
                   <img src={`https://www.themoviedb.org/t/p/w440_and_h660_face${film.poster_path}`} alt="img"/>
                   <div className="movie-info-img-btn">
-                    <button>
-                      <img src={`https://www.themoviedb.org/t/p/original/7rwgEs15tFwyR9NPQ5vpzxTj19Q.jpg`} alt="img"/>
-                      <div className="title-btn">
-                        <h3>Now Streaming</h3>
-                        <h2>Watch Now</h2>
-                      </div>
-                    </button>
+                    {/*<button>*/}
+                    {/*  <img src={`https://www.themoviedb.org/t/p/original/7rwgEs15tFwyR9NPQ5vpzxTj19Q.jpg`} alt="img"/>*/}
+                    {/*  <div className="title-btn">*/}
+                    {/*    <h3>Now Streaming</h3>*/}
+                    {/*    <h2>Watch Now</h2>*/}
+                    {/*  </div>*/}
+                    {/*</button>*/}
                   </div>
                 </div>
               </div>
@@ -70,8 +70,8 @@ const MovieInfo = () => {
                   </div>
                   <div className="film-info-box">
                     <span>{dateRelease(film.release_date)}</span>
-                    <span className="film-class">{genres(film.genres)}</span>
-                    <span>{film.runtime} min</span>
+                    <span key={film.id} className="film-class">{genres(film.genres)}</span>
+                    <span>{film.runtime !== null ? Math.floor(film.runtime / 60) > 0 ?`${Math.floor(film.runtime / 60)}h ${film.runtime % 60}min` : `${film.runtime % 60}min` : "－"}</span>
                     <div className="film-score">
                       <div className="film-score-rating"><span>75%</span></div>
                       <h5>User<br/>Score</h5>
@@ -85,12 +85,31 @@ const MovieInfo = () => {
                     </div>
                   </div>
                 </div>
+                <div className="movie-info-overview">Overview</div>
                 <div className="movie-info-description">{film.overview}</div>
                 <div className="">{credits.id}</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="scroller">
+
+        <h3>Top Billed Cast</h3>
+
+        {
+          credits.cast.map((actor) => (
+            <div className="film-box" key={id}>
+              <div className="film-img">
+                  <img className="oneFilm-img"
+                       src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`: 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg'} alt="img"/>
+              </div>
+              <h5>{actor.name}</h5>
+              <h6>{actor.character}</h6>
+            </div>
+          ))
+        }
+
       </div>
     </div>
   );

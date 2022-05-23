@@ -27,15 +27,15 @@
 .popular-nav{
     margin-left: 30px;
     border: solid 1px #000;
-    border-radius: 10px;
+    border-radius: 19px;
     margin-bottom: 25px;
 }
 
 .popular-btn{
-    padding: 5px 10px;
+    padding: 3px 37px;
     background-color: #ffffff;
     border: solid 1px #ffffff;
-    border-radius: 10px;
+    border-radius: 26px;
     transition: 0.5s;
     font-size: 18px;
 }
@@ -47,7 +47,7 @@
 
 }
 
-.popular-scroller{
+.scroller{
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100%;

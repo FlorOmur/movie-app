@@ -23,15 +23,6 @@
     border-radius: 10px;
 }
 
-.movie-info-img-btn button {
-    background-color: #032541;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 0;
-}
-
 .title-btn {
     margin-left: 10px;
     color: #ffffff;
@@ -40,6 +31,10 @@
 .movie-info-img-btn img {
     width: 36px;
     height: 36px;
+}
+
+.film-info-title{
+    margin-top: 65px;
 }
 
 .title-film{
@@ -61,6 +56,18 @@
 .film-info-box{
     color: #ffffff;
 }
+
+.movie-info-overview{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.movie-info-description{
+    color: #ffffff;
+    padding-bottom: 15px;
+}
+
 
 .film-score{
     display: flex;

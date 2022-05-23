@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from "../Hero";
+import ToWatch from "../ToWatch";
 import Popular from "../Popular";
 
 
@@ -8,7 +9,8 @@ const HomePage = () => {
     <div className="homePage">
       <Hero/>
       <div className="container">
-      {<Popular/>}
+        {<Popular/>}
+        {<ToWatch/>}
       </div>
     </div>
   );
