@@ -10,7 +10,6 @@ const Popular = () => {
   const [mediaType, setMediaType] = useState('tv')
 
   useEffect(() => {
-    // https://api.themoviedb.org/3/discover/movie/?api_key=08461d9c0888c7c07b11dcd7fda95b8d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate
     axios(`https://api.themoviedb.org/3/trending/${mediaType}/day?language=ru-RUS&sort_by=popularity.desc&api_key=08461d9c0888c7c07b11dcd7fda95b8d`)
       .then((res) => {
         setPopular(res.data.results)
@@ -54,7 +53,7 @@ const Popular = () => {
                 </div>
               </div>
               <Link to={`/movieInfo/${oneFilm.id}`}>
-                <h4 className="title-box">{oneFilm.title}</h4>
+                <h4 className="title-box">{oneFilm.name || oneFilm.title}</h4>
               </Link>
               {/*<span className="film-year">{formatDate(oneFilm.release_date)}</span>*/}
             </div>
