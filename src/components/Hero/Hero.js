@@ -31,7 +31,10 @@ const Hero = () => {
         <h3 className="hero-sub-title">Millions of movies, TV shows and people to discover. Explore now.</h3>
       </div>
       <div className="hero-search">
-        <input className="input-search" type="text" placeholder="Search for a movie, tv show, person......"/>
+        <input className="input-search"
+               type="text"
+               placeholder="Search for a movie, tv show, person......"
+        />
         <button className="search-btn">Search</button>
       </div>
     </div>
