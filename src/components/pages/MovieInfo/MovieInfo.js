@@ -11,9 +11,9 @@ const MovieInfo = () => {
   const [filmLoader, setFilmLoader] = useState(true);
   const [creditLoader, setCreditLoader] = useState(true);
 
-  console.log()
+  console.log(credits)
   useEffect(() => {
-    axios(`https://api.themoviedb.org/3/movie/${id}?api_key=c15dc811a651d1fac269c5d73e1332f0`)
+    axios(`https://api.themoviedb.org/3/movie/${id}?api_key=08461d9c0888c7c07b11dcd7fda95b8d`)
       .then((res) => {
         setFilm(res.data)
         setFilmLoader(false)

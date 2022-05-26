@@ -58,7 +58,7 @@ const ToWatch = () => {
                 </div>
               </div>
               <Link to={`/movieInfo/${oneFilm.id}`}>
-                <h4 className="title-box">{oneFilm.title}</h4>
+                <h4 className="title-box">{oneFilm.name || oneFilm.title}</h4>
               </Link>
               {/*<span className="film-year">{formatDate(oneFilm.release_date)}</span>*/}
             </div>
