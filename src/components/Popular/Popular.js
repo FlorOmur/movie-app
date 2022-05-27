@@ -7,17 +7,17 @@ const Popular = () => {
 
   const [popular, setPopular] = useState({})
   const [loading, setLoading] = useState(true)
-  const [mediaType, setMediaType] = useState('tv')
+  const [mediaType, setMediaType] = useState('movie')
 
   useEffect(() => {
-    axios(`https://api.themoviedb.org/3/trending/${mediaType}/day?language=ru-RUS&sort_by=popularity.desc&api_key=08461d9c0888c7c07b11dcd7fda95b8d`)
+    axios(`https://api.themoviedb.org/3/trending/${mediaType}/week?language=ru-RUS&sort_by=popularity.desc&api_key=08461d9c0888c7c07b11dcd7fda95b8d`)
       .then((res) => {
         setPopular(res.data.results)
         setLoading(false)
       })
   }, [mediaType])
 
-
+  console.log(popular)
   // const formatDate = (date) => {
   //   const month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']
   //   const reversedDate = date.split('-').reverse()
@@ -35,7 +35,7 @@ const Popular = () => {
       <div className="popular-box">
         <h3>What's Popular</h3>
         <div className="popular-nav">
-          <button className="popular-btn" type="button" onClick={() => setMediaType('Movie')}>Streaming</button>
+          <button className="popular-btn" type="button" onClick={() => setMediaType('movie')}>Movie</button>
           <button className="popular-btn" type="button" onClick={() => setMediaType('tv')}>On TV</button>
         </div>
       </div>
@@ -55,7 +55,7 @@ const Popular = () => {
               <Link to={`/movieInfo/${oneFilm.id}`}>
                 <h4 className="title-box">{oneFilm.name || oneFilm.title}</h4>
               </Link>
-              {/*<span className="film-year">{formatDate(oneFilm.release_date)}</span>*/}
+              {/*<span className="film-year">{formatDate(mediaType === "movie" ? oneFilm.release_date : oneFilm.first_air_date)}</span>*/}
             </div>
           ))
         }

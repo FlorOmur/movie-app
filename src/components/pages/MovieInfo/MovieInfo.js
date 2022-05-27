@@ -52,7 +52,7 @@ const MovieInfo = () => {
         <li>Share</li>
       </nav>
       <div className="out-movie-info" style={{
-        backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${film.backdrop_path})`,
+        backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${film.backdrop_path})`,
         backgroundSize: "cover",
         // backgroundPosition: "200px top",
         backgroundRepeat: "no-repeat"
@@ -66,7 +66,7 @@ const MovieInfo = () => {
                     <img
                       // onLoad={onImegLoad}.........
                       // crossOrigin="anonymous".........
-                      src={`https://www.themoviedb.org/t/p/w440_and_h660_face${film.poster_path}`}
+                      src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${film.poster_path}`}
                       alt="img"/>
                     {/*<div className="movie-info-img-btn">*/}
                     {/*<button>*/}

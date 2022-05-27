@@ -11,7 +11,7 @@ const ToWatch = () => {
   const [mediaType, setMediaType] = useState('day')
 
   useEffect(() => {
-    axios(`https://api.themoviedb.org/3/trending/all/${mediaType}?language=ru-RUS&sort_by=popularity.desc&api_key=08461d9c0888c7c07b11dcd7fda95b8d`)
+    axios(`https://api.themoviedb.org/3/trending/movie/${mediaType}?language=ru-RUS&sort_by=popularity.desc&api_key=08461d9c0888c7c07b11dcd7fda95b8d`)
       .then((res) => {
         setPopular(res.data.results)
         setLoading(false)
@@ -25,7 +25,6 @@ const ToWatch = () => {
   //   reversedDate[1] = month[reversedDate[1] - 1]
   //   return reversedDate.join(' ')
   // }
-
 
 
   if (loading) {
@@ -60,7 +59,7 @@ const ToWatch = () => {
               <Link to={`/movieInfo/${oneFilm.id}`}>
                 <h4 className="title-box">{oneFilm.name || oneFilm.title}</h4>
               </Link>
-              {/*<span className="film-year">{formatDate(oneFilm.release_date)}</span>*/}
+              {/*<span className="film-year">{formatDate(mediaType === "day" ? oneFilm.release_date : oneFilm.first_air_date)}</span>*/}
             </div>
           ))
         }
