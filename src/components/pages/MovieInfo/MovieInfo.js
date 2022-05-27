@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+// import fastColor from "fast-average-color" библиотека для определение фона
 import axios from 'axios';
 import "./MovieInfo.css"
 
@@ -10,6 +11,8 @@ const MovieInfo = () => {
   const [credits, setCredits] = useState([])
   const [filmLoader, setFilmLoader] = useState(true);
   const [creditLoader, setCreditLoader] = useState(true);
+
+  // const [color, setColor] = useState('') стейта для хранение цвета
 
   console.log(credits)
   useEffect(() => {
@@ -33,6 +36,13 @@ const MovieInfo = () => {
   const dateRelease = (date) => date.split('-').reverse().join('/')
   const genres = (movieGenres) => movieGenres.map((item) => (item.name)).join(', ')
 
+  // function onImegLoad(e){
+  //   new fastColor().getColorAsync(e.target)
+  //     .then((imgColor) => {
+  //       setColor(`rgba(${imgColor.value.slice(0, 3).join(',')},0.8)`)
+  //     })
+  // } фунция преобразование цвета
+
   return (
     <div>
       <nav className="movie-info-nav">
@@ -41,63 +51,69 @@ const MovieInfo = () => {
         <li>Fandom</li>
         <li>Share</li>
       </nav>
-      <div className="out-movie-info">
-        <div className="movieInfo" style={{
-          backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${film.backdrop_path})`,
-          backgroundSize: "cover",
-          backgroundPosition: "200px top",
-          backgroundRepeat: "no-repeat"
-        }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-3">
-                <div className="movie-info-img">
-                  <img src={`https://www.themoviedb.org/t/p/w440_and_h660_face${film.poster_path}`} alt="img"/>
-                  {/*<div className="movie-info-img-btn">*/}
-                  {/*<button>*/}
-                  {/*  <img src={`https://www.themoviedb.org/t/p/original/7rwgEs15tFwyR9NPQ5vpzxTj19Q.jpg`} alt="img"/>*/}
-                  {/*  <div className="title-btn">*/}
-                  {/*    <h3>Now Streaming</h3>*/}
-                  {/*    <h2>Watch Now</h2>*/}
-                  {/*  </div>*/}
-                  {/*</button>*/}
-                  {/*</div>*/}
-                </div>
-              </div>
-              <div className="col-9">
-                <div>
-                  <div className="movie-info-title"><span className="title-film">{film.title} <span
-                    className="film-title-year">(2022)</span></span>
+      <div className="out-movie-info" style={{
+        backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${film.backdrop_path})`,
+        backgroundSize: "cover",
+        // backgroundPosition: "200px top",
+        backgroundRepeat: "no-repeat"
+      }}>
+        <div className="movieInfo" style={{backgroundColor: '#55000055'}}>
+          <div className="bla-bla" >
+            <div className="container">
+              <div className="row">
+                <div className="col-3">
+                  <div className="movie-info-img">
+                    <img
+                      // onLoad={onImegLoad}.........
+                      // crossOrigin="anonymous".........
+                      src={`https://www.themoviedb.org/t/p/w440_and_h660_face${film.poster_path}`}
+                      alt="img"/>
+                    {/*<div className="movie-info-img-btn">*/}
+                    {/*<button>*/}
+                    {/*  <img src={`https://www.themoviedb.org/t/p/original/7rwgEs15tFwyR9NPQ5vpzxTj19Q.jpg`} alt="img"/>*/}
+                    {/*  <div className="title-btn">*/}
+                    {/*    <h3>Now Streaming</h3>*/}
+                    {/*    <h2>Watch Now</h2>*/}
+                    {/*  </div>*/}
+                    {/*</button>*/}
+                    {/*</div>*/}
                   </div>
-                  <div className="film-info-box">
-                    <span>{dateRelease(film.release_date)}</span>
-                    <span key={film.id} className="film-class">{genres(film.genres)}</span>
-                    <span>{film.runtime !== null ? Math.floor(film.runtime / 60) > 0 ? `${Math.floor(film.runtime / 60)}h ${film.runtime % 60}min` : `${film.runtime % 60}min` : "－"}</span>
-                    <div className="film-score">
-                      <div className="film-score-rating"><span>75%</span></div>
-                      <h5>User<br/>Score</h5>
-                      <div className="film-add">
-                        <div><span
-                          className="icon-glyphicons-basic-159-thumbnails-list-white-c260ea972eebf812289fd3c41d0d2c1dff33ecbcd62be13fba8eeaf9de173789"></span>
-                        </div>
-                        <div><span
-                          className="icon-glyphicons-basic-13-heart-white-28d2cc2d6418c5047efcfd2438bfc5d109192671263c270993c05f130cc4584e"></span>
-                        </div>
-                        <div><span
-                          className="icon-glyphicons-basic-73-bookmark-white-432e98d550b7e4c80b06272c49475b0db85a60f6fae450420713004b3c9d3ffd"></span>
-                        </div>
-                        <div><span
-                          className="icon-glyphicons-basic-49-star-white-5c85220678b312aea9599d5f12ad858a9e7df226de51ef8b6b699023ffeda5fa"></span>
-                        </div>
-                        <div><span
-                          className="icon-glyphicons-basic-175-play-806cb05551791b8dedd7f8d38fd3bd806e2d397fcfeaa00a5cc9129f0819fd07"></span>
+                </div>
+                <div className="col-9">
+                  <div>
+                    <div className="movie-info-title"><span className="title-film">{film.title} <span
+                      className="film-title-year">(2022)</span></span>
+                    </div>
+                    <div className="film-info-box">
+                      <span>{dateRelease(film.release_date)}</span>
+                      <span key={film.id} className="film-class">{genres(film.genres)}</span>
+                      <span>{film.runtime !== null ? Math.floor(film.runtime / 60) > 0 ? `${Math.floor(film.runtime / 60)}h ${film.runtime % 60}min` : `${film.runtime % 60}min` : "－"}</span>
+                      <div className="film-score">
+                        <div className="film-score-rating"><span>75%</span></div>
+                        <h5>User<br/>Score</h5>
+                        <div className="film-add">
+                          <div><span
+                            className="icon-glyphicons-basic-159-thumbnails-list-white-c260ea972eebf812289fd3c41d0d2c1dff33ecbcd62be13fba8eeaf9de173789"></span>
+                          </div>
+                          <div><span
+                            className="icon-glyphicons-basic-13-heart-white-28d2cc2d6418c5047efcfd2438bfc5d109192671263c270993c05f130cc4584e"></span>
+                          </div>
+                          <div><span
+                            className="icon-glyphicons-basic-73-bookmark-white-432e98d550b7e4c80b06272c49475b0db85a60f6fae450420713004b3c9d3ffd"></span>
+                          </div>
+                          <div><span
+                            className="icon-glyphicons-basic-49-star-white-5c85220678b312aea9599d5f12ad858a9e7df226de51ef8b6b699023ffeda5fa"></span>
+                          </div>
+                          <div><span
+                            className="icon-glyphicons-basic-175-play-806cb05551791b8dedd7f8d38fd3bd806e2d397fcfeaa00a5cc9129f0819fd07"></span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div className="movie-info-overview">Overview</div>
+                  <div className="movie-info-description">{film.overview}</div>
                 </div>
-                <div className="movie-info-overview">Overview</div>
-                <div className="movie-info-description">{film.overview}</div>
               </div>
             </div>
           </div>
